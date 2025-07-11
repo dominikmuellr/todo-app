@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#386A20">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ToDodo</title>
+  
+  <!-- Theme Loader Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('react-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let shouldBeDark = false;
+      
+      if (savedTheme === 'dark') {
+        shouldBeDark = true;
+      } else if (savedTheme === 'light') {
+        shouldBeDark = false;
+      } else if (savedTheme === 'auto') {
+        shouldBeDark = prefersDark;
+      } else {
+        shouldBeDark = prefersDark;
+      }
+      
+      if (shouldBeDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+      
+      const savedColorTheme = localStorage.getItem('react-color-theme');
+      if (savedColorTheme && savedColorTheme !== 'rose') {
+        document.documentElement.setAttribute('data-color-theme', savedColorTheme);
+      }
+    })();
+  </script>
+  
+  <!-- External Resources -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <script type="module" crossorigin src="/todo-app/assets/js/index-Bnn6W0dN.js"></script>
+  <link rel="stylesheet" crossorigin href="/todo-app/assets/css/index-Bh5TSeRv.css">
+</head>
+<body>
+    <!-- Application Body -->
+    <div id="root"></div>
+
+    <noscript>
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f44336; color: white; padding: 20px; border-radius: 8px; text-align: center; z-index: 9999;">
+            <h3>JavaScript Required</h3>
+            <p>This application requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+
+</body>
+</html>
